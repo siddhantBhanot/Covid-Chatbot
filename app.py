@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
-
 import tensorflow as tf
 import tensorflow_hub as hub
+import ssl
 import tensorflow_text
 import re
+
+
+# Disable SSL certificate verification (for testing)
+ssl._create_default_https_context = ssl._create_unverified_context
 
 app = Flask(__name__)
 
@@ -18,7 +22,7 @@ def preprocess_sentences(input_sentences):
             for input_sentence in input_sentences]
         
 # Load module containing USE
-module = hub.load('https://tfhub.dev/google/universal-sentence-encoder-multilingual-qa/3')
+module = hub.load('./universal-sentence-encoder-tensorflow2-multilingual-qa-v2')
 
 # Creating response encodings
 response_encodings = module.signatures['response_encoder'](
