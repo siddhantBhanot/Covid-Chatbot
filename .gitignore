@@ -139,3 +139,6 @@ dmypy.json
 cython_debug/
 
 universal-sentence-encoder*/
+
+.DS_Store
+*.~lock*

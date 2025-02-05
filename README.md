@@ -84,6 +84,9 @@ Response:
 }
 ```
 
+## Screenshot
+Below is a screenshot of the Covid Chatbot application in action:
+![Covid Chatbot Screenshot](screenshot_2021-07-01.png)
 
 
 
